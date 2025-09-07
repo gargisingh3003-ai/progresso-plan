@@ -150,6 +150,16 @@
   }
 }
 
+@layer utilities {
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+}
+
 @layer base {
   * {
     @apply border-border transition-smooth;
