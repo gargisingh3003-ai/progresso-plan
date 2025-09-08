@@ -7,6 +7,9 @@ import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { ProjectSidebar } from "@/components/project-sidebar";
 import Dashboard from "./pages/Dashboard";
 import Backlog from "./pages/Backlog";
+import Projects from "./pages/Projects";
+import Users from "./pages/Users";
+import CreateTicket from "./pages/CreateTicket";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -35,7 +38,10 @@ const App = () => (
               <main className="flex-1 p-6">
                 <Routes>
                   <Route path="/" element={<Dashboard />} />
+                  <Route path="/projects" element={<Projects />} />
                   <Route path="/backlog" element={<Backlog />} />
+                  <Route path="/create-ticket" element={<CreateTicket />} />
+                  <Route path="/users" element={<Users />} />
                   {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
                   <Route path="*" element={<NotFound />} />
                 </Routes>

@@ -97,7 +97,10 @@ export default function Backlog() {
           <h1 className="text-3xl font-bold tracking-tight">Product Backlog</h1>
           <p className="text-muted-foreground">Manage and prioritize your project tasks</p>
         </div>
-        <Button className="bg-gradient-primary hover:shadow-elevated">
+        <Button 
+          className="bg-gradient-primary hover:shadow-elevated"
+          onClick={() => window.location.href = "/create-ticket"}
+        >
           <Plus className="h-4 w-4 mr-2" />
           Create Ticket
         </Button>

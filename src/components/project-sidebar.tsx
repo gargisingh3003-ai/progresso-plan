@@ -8,7 +8,9 @@ import {
   Plus,
   FolderKanban,
   Calendar,
-  Target
+  Target,
+  Home,
+  Briefcase
 } from "lucide-react";
 import {
   Sidebar,
@@ -25,12 +27,11 @@ import {
 import { Button } from "@/components/ui/button";
 
 const navigationItems = [
-  { title: "Dashboard", url: "/", icon: BarChart3 },
+  { title: "Dashboard", url: "/", icon: Home },
+  { title: "Projects", url: "/projects", icon: Briefcase },
   { title: "Backlog", url: "/backlog", icon: CheckSquare },
-  { title: "Sprint Planning", url: "/sprints", icon: Calendar },
-  { title: "Team", url: "/team", icon: Users },
-  { title: "Projects", url: "/projects", icon: FolderKanban },
-  { title: "Goals", url: "/goals", icon: Target },
+  { title: "Users", url: "/users", icon: Users },
+  { title: "Analytics", url: "/analytics", icon: BarChart3 },
 ];
 
 const settingsItems = [
@@ -72,7 +73,11 @@ export function ProjectSidebar() {
         </div>
 
         <div className="p-3">
-          <Button className="w-full bg-gradient-primary hover:shadow-elevated transition-all" size={isCollapsed ? "icon" : "default"}>
+          <Button 
+            className="w-full bg-gradient-primary hover:shadow-elevated transition-all" 
+            size={isCollapsed ? "icon" : "default"}
+            onClick={() => window.location.href = "/create-ticket"}
+          >
             <Plus className="h-4 w-4" />
             {!isCollapsed && <span className="ml-2">Create Ticket</span>}
           </Button>
